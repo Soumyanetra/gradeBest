@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/gradeBest/static/css/main.1be048a2.chunk.css",
+    "main.css": "/gradeBest/static/css/main.5df1ef9c.chunk.css",
     "main.js": "/gradeBest/static/js/main.d742c0e0.chunk.js",
     "main.js.map": "/gradeBest/static/js/main.d742c0e0.chunk.js.map",
     "runtime-main.js": "/gradeBest/static/js/runtime-main.6309de67.js",
@@ -10,13 +10,13 @@
     "static/js/3.2d061181.chunk.js": "/gradeBest/static/js/3.2d061181.chunk.js",
     "static/js/3.2d061181.chunk.js.map": "/gradeBest/static/js/3.2d061181.chunk.js.map",
     "index.html": "/gradeBest/index.html",
-    "static/css/main.1be048a2.chunk.css.map": "/gradeBest/static/css/main.1be048a2.chunk.css.map",
+    "static/css/main.5df1ef9c.chunk.css.map": "/gradeBest/static/css/main.5df1ef9c.chunk.css.map",
     "static/js/2.9369470f.chunk.js.LICENSE.txt": "/gradeBest/static/js/2.9369470f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6309de67.js",
     "static/js/2.9369470f.chunk.js",
-    "static/css/main.1be048a2.chunk.css",
+    "static/css/main.5df1ef9c.chunk.css",
     "static/js/main.d742c0e0.chunk.js"
   ]
 }
