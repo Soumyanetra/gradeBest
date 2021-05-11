@@ -1,0 +1,23 @@
+.dashboard {
+  padding-top: 200px;
+  width: 100%;
+  overflow-x: hidden;
+}
+.signOut{
+  font-size: 30px;
+  font-family: "Akaya Telivigala";
+  border: solid red;
+  outline: none;
+  border-radius: 30px;
+  width: 45%;
+  height: 80px;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-left: 10px;;
+}
+.signOut:hover{
+  font-weight: bold;
+  background: linear-gradient(-45deg, #2193b0, red);
+  color: white;
+  letter-spacing: 3px;
+}

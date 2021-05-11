@@ -1,0 +1,14 @@
+
+.testHolder{
+    padding-top: 0px;
+}
+.alltst{
+        position: absolute;
+        width: 90%;
+        height: 700px;
+        left: 50%;
+        top:250px;
+        transform: translateX(-50%);
+        box-shadow: 10px 10px 8px 5px grey;
+        overflow-x: hidden;
+}

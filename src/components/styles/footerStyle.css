@@ -1,0 +1,15 @@
+.foot{
+    color: white;
+    width: 100%;
+    height: 40px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    
+}
+.foot h2{
+    margin: 0;
+    padding: 0;
+    font-family: "Itim";
+}

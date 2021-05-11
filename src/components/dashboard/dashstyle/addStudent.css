@@ -1,0 +1,61 @@
+.studentHolder{
+    padding-top: 250px;
+    height:500px;
+    overflow-x: hidden;
+}
+.getBack{
+    padding: 0px;;
+}
+.stdAdd{
+    position: absolute;
+    width: 70%;
+    height: 650px;
+    left: 50%;
+    top:250px;
+    transform: translateX(-50%);
+    box-shadow: 10px 10px 8px 5px grey;
+}
+.buttonHolder{
+    text-align: center;
+}
+.dropdown{
+    margin-left: 25px;
+    width: 50%;
+    border: none;
+    outline: none;
+    font-size: 23px;
+    cursor: pointer;
+}
+.dropdown option{
+    cursor: pointer;
+}
+.subjectHolder{
+    height: 175px;
+    overflow-y: scroll;
+}
+.chkLbl{
+    cursor: pointer;
+}
+.checkInpt{
+    display: none;
+    margin-right: 0.2em;
+}
+.checkInpt + .chkLbl:before{
+    content:"\2714";
+    border: 0.1em solid #000;
+    border-radius: 0.2em;
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-bottom: 0.1em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color:transparent;
+}
+.checkInpt:checked + .chkLbl:before{
+    background-color: mediumseagreen;
+    border-color: mediumseagreen;
+    color: #fff;
+}

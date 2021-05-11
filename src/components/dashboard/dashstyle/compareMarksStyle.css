@@ -1,0 +1,17 @@
+.grphHolder{
+    width:60%;
+}
+.graph{
+    width:100%;
+}
+.nameHolder{
+    height:360px;
+}
+.mask{
+    content: '';
+    width:100%;
+    height:20px;
+    position:relative;
+    top:20px;
+    margin-top:-20px;
+}
