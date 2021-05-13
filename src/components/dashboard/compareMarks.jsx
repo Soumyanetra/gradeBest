@@ -31,7 +31,7 @@ function CompareMarks() {
                                     <tr key={student}>
                                         <td className="Column"><label className='indc' htmlFor={student}>{student}</label></td>
                                         <td className="Column marks"><span className='indc'>(Marks: {(test.testDetails[student]) ? test.testDetails[student] : 0})</span></td>
-                                        <td className="Column grphHolder"><div className='mask'></div><input className='graph' id={student} type="range" min="0" max={test.testDetails.maxMarks} Value={(test.testDetails[student]) ? test.testDetails[student] : 0} readOnly={true}></input></td>
+                                        <td className="Column grphHolder"><div className='mask'></div><input className='graph' id={student} type="range" min="0" max="100" Value={(test.testDetails[student]) ? (test.testDetails[student]/test.testDetails.maxMarks)*100 : 0} readOnly={true}></input></td>
                                     </tr>
                                 ))}
                             </table>

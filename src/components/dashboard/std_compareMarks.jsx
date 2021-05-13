@@ -63,53 +63,70 @@ function Std_compareMarks() {
     function arrangeHtmlElements(exam, subject) {
         let accumulate = ``
         let examination = Object.keys(exam)
-        examination.map((block) => (
-            `<div id="${block}" className='holder' key="${block}" style="width: 200px;">
-                    <div    className='legend'
-                            style="cursor: pointer; padding-top: 30px;">
-                        ${block}
-                    </div>
-            </div>
-            `
-        )).forEach(getHtml => {
-            accumulate += getHtml;
-        })
-        document.getElementById("lets").innerHTML = accumulate;
-        examination.forEach((doIt) => {
-            document.getElementById(doIt).addEventListener("click", function () {
-                Tests.setTest(doIt,exam[doIt],subject,exam);
-                history.push('/dashboard/student/compareMarks');
+        if (examination.length) {
+            examination.map((block) => (
+                `<div id="${block}" className='holder' key="${block}" style="width: 200px;">
+                        <div    className='legend'
+                                style="cursor: pointer; padding-top: 30px;">
+                            ${block}
+                        </div>
+                </div>
+                `
+            )).forEach(getHtml => {
+                accumulate += getHtml;
             })
-            setHolderStyle(document.getElementById(doIt))
-        })
+            document.getElementById("lets").innerHTML = accumulate;
+            examination.forEach((doIt) => {
+                document.getElementById(doIt).addEventListener("click", function () {
+                    Tests.setTest(doIt, exam[doIt], subject, exam);
+                    history.push('/dashboard/student/compareMarks');
+                })
+                setHolderStyle(document.getElementById(doIt))
+            })
+        }
+        else
+        {
+            document.getElementById("lets").innerHTML =`<div id="errMessage" className='holder' style="width: 200px;">
+                                                                <div   className='legend'
+                                                                        style="cursor: pointer; padding-top: 30px;">
+                                                                    No Tests Registered Yet!!<br></br>
+                                                                    You would be able to see the list of Tests only after it is added by your Faculty!<br></br>
+                                                                    Contact Your Faculty for any Discrepancy...
+                                                                </div>
+                                                            </div>`
+                setErrMessageStyle(document.getElementById("errMessage"))
+         }
     }
     function getAllTests() {
         const elm = document.getElementById("subject");
-        let exams = tests.map(test => (
-            test
-        ))
-        Students.setStudents(students[subjects[elm.value]])
-        const stud = Students.getStudents()
-        let flag = 0;
-        stud.forEach(st => {
-            if (st === auth.isAuthenticated().id.substring(0, (auth.isAuthenticated().id.length - 3)))
-                flag = 1;
-        })
-        if(flag===1)
-            arrangeHtmlElements(exams[subjects[elm.value]], elm.value);
-        else{
-            document.getElementById("lets").innerHTML =`<div id="errMessage" className='holder' style="width: 200px;">
-                                                            <div   className='legend'
-                                                                    style="cursor: pointer; padding-top: 30px;">
-                                                                Hey <b>${auth.isAuthenticated().id.substring(0,(auth.isAuthenticated().id.length-3))}</b>,<br></br>
-                                                                Unfortunately, you are NOT registered to <b>${elm.value}</b><br></br>
-                                                                Get yourself in, NOW!! <br></br>
-                                                                <i>Contact our ADMINS</i>
-                                                            </div>
-                                                        </div>`
-            setErrMessageStyle(document.getElementById("errMessage"))
+        if (elm.value) {
+            let exams = tests.map(test => (
+                test
+            ))
+            Students.setStudents(students[subjects[elm.value]])
+            const stud = Students.getStudents()
+            let flag = 0;
+            stud.forEach(st => {
+                if (st === auth.isAuthenticated().id.substring(0, (auth.isAuthenticated().id.length - 3)))
+                    flag = 1;
+            })
+            if(flag===1)
+                arrangeHtmlElements(exams[subjects[elm.value]], elm.value);
+            else{
+                document.getElementById("lets").innerHTML =`<div id="errMessage" className='holder' style="width: 200px;">
+                                                                <div   className='legend'
+                                                                        style="cursor: pointer; padding-top: 30px;">
+                                                                    Hey <b>${auth.isAuthenticated().id.substring(0,(auth.isAuthenticated().id.length-3))}</b>,<br></br>
+                                                                    Unfortunately, you are NOT registered to <b>${elm.value}</b><br></br>
+                                                                    Get yourself in, NOW!! <br></br>
+                                                                    <i>Contact our ADMINS</i>
+                                                                </div>
+                                                            </div>`
+                setErrMessageStyle(document.getElementById("errMessage"))
+            }
         }
-        
+        else
+        document.getElementById("lets").innerHTML =''
     }
     return (
         <>

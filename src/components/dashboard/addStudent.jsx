@@ -50,15 +50,25 @@ function AddStudent() {
             }).then(() => {
                 let flag = 0;
                 for (let i = 0; i < sub.length; ++i) {
-                    if(sub[i].checked)
-                    {    db.collection('Students').doc(sub[i].value).update({
-                            [elm.value]: true
-                        }).then(() => {
-                            alert(elm.value + " Successfully Added to "+sub[i].value+"!!")
-                            sub[i].checked = false;
-                            elm.value = '';
-                        })
-                        flag = 1;
+                    if (sub[i].checked)
+                    {
+                        if (sub[i].value.split('_')[1] === std) {
+                            db.collection('Students').doc(sub[i].value).update({
+                                [elm.value]: true
+                            }).then(() => {
+                                alert(elm.value + " Successfully Added to " + sub[i].value + "!!")
+                                sub[i].checked = false
+                                elm.value = ''
+                            })
+                            flag = 1
+                        }
+                        else {
+                            flag = 2
+                            elm.value = ''
+                            sub[i].checked = false
+                            alert("Subject and Student Standard does not Match!!\nAdd Unsuccessful!!")
+                        }
+                            
                     }
                 }
                 if (flag === 0)

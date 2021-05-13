@@ -13,6 +13,7 @@ import std_compareMarks from './components/dashboard/std_compareMarks';
 import compareMarks from './components/dashboard/compareMarks';
 import comingSoon from './components/comingSoon';
 import contact from './components/dashboard/contact';
+import removeStd from './components/dashboard/rmvStd';
 
 function App() {
   
@@ -28,6 +29,9 @@ function App() {
           <Route path='/dashboard/admin/newTest' exact component={addTest}></Route>
           <Route path='/dashboard/admin/allTest' exact component={allTest}></Route>
           <Route path='/dashboard/admin/displayMarks' exact component={displayMarks}></Route>
+          <Route path='/dashboard/admin/rmvStd' exact component={removeStd}></Route>
+          <Route path='/dashboard/admin/rmvTest' exact component={comingSoon}></Route>
+          
 
           <Route path='/dashboard/student/tests' exact component={std_testMarks}></Route>
           <Route path='/dashboard/student/compare' exact component={std_compareMarks}></Route>

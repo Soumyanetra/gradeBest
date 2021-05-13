@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState }  from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
-import './dashstyle/allTest.css';
 import Subjects from '../subject';
 import Students from '../student';
-import Tests from '../test';
+import './dashstyle/addStudent.css';
 import auth from '../auth';
 import firebase from '../firebase';
-function AllTest() {
-    const [tests, getTests] = useState([]);
+function RmvStudent() {
     const [students, getStud] = useState([]);
 
     const subjects = Subjects.getSubjects();
     
     const history = useHistory();
-    useEffect(()=>{
-            const fetchData = async () => {
-            const db = firebase.firestore();
-            const data = await db.collection("Tests").get()
-            getTests(data.docs.map(doc => doc.data()));
-            }
-            fetchData();
-    }, []);
     useEffect(()=>{
             const fetchData = async () => {
             const db = firebase.firestore();
@@ -60,10 +50,24 @@ function AllTest() {
         holder.textAlign = "center"
         holder.fontSize = "25px"
     }
-    function arrangeHtmlElements(exam, subject) {
+    function removeStudent(name, subject) {
+        const db = firebase.firestore();
+        let removedSet={}
+        Object.keys(students[subjects[subject]]).forEach((student) => {
+            if (student !== name)
+                removedSet ={...removedSet, [student]:true}
+        })
+        db.collection("Students").doc(subject).set(removedSet).then(() => {
+            alert(name + " Successfully Removed from " + subject + "!!")
+            Students.setStudents(removedSet)
+            arrangeHtmlElements(Object.keys(removedSet), subject)
+        }).catch(() => {
+            alert(name + " Remove Unsuccessful!!")
+        })
+    }
+    function arrangeHtmlElements(shisya, subject) {
         let accumulate = ``
-        let examination = Object.keys(exam)
-        examination.map((block) => (
+        shisya.map((block) => (
             `<div id="${block}" className='holder' key="${block}" style="width: 200px;">
                     <div    className='legend'
                             style="cursor: pointer; padding-top: 30px;">
@@ -75,10 +79,9 @@ function AllTest() {
             accumulate += getHtml;
         })
         document.getElementById("lets").innerHTML = accumulate;
-        examination.forEach((doIt) => {
+        shisya.forEach((doIt) => {
             document.getElementById(doIt).addEventListener("click", function () {
-                Tests.setTest(doIt,exam[doIt],subject,exam);
-                history.push('/dashboard/admin/displayMarks');
+                removeStudent(doIt, subject);
             })
             setHolderStyle(document.getElementById(doIt))
         })
@@ -86,12 +89,10 @@ function AllTest() {
     function getAllTests() {
         const elm = document.getElementById("subject");
         if (elm.value) {
-            let exams = tests.map(test => (
-                test
-            ))
             Students.setStudents(students[subjects[elm.value]])
-            if (Object.keys(exams[subjects[elm.value]]).length)
-                arrangeHtmlElements(exams[subjects[elm.value]], elm.value);
+            let sishya=Students.getStudents()
+            if (sishya.length)
+                arrangeHtmlElements(sishya, elm.value);
             else {
                 document.getElementById("lets").innerHTML = `<div id="errMessage" className='holder' style="width: 200px;">
                                                                 <div   className='legend'
@@ -131,4 +132,4 @@ function AllTest() {
         </>    
     );
 }
-export default AllTest;
+export default RmvStudent;
