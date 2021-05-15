@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/gradeBest/static/css/main.8bffb295.chunk.css",
-    "main.js": "/gradeBest/static/js/main.21520dbe.chunk.js",
-    "main.js.map": "/gradeBest/static/js/main.21520dbe.chunk.js.map",
+    "main.js": "/gradeBest/static/js/main.968442a9.chunk.js",
+    "main.js.map": "/gradeBest/static/js/main.968442a9.chunk.js.map",
     "runtime-main.js": "/gradeBest/static/js/runtime-main.d7e56771.js",
     "runtime-main.js.map": "/gradeBest/static/js/runtime-main.d7e56771.js.map",
-    "static/js/2.cb0ca28a.chunk.js": "/gradeBest/static/js/2.cb0ca28a.chunk.js",
-    "static/js/2.cb0ca28a.chunk.js.map": "/gradeBest/static/js/2.cb0ca28a.chunk.js.map",
+    "static/js/2.6029317e.chunk.js": "/gradeBest/static/js/2.6029317e.chunk.js",
+    "static/js/2.6029317e.chunk.js.map": "/gradeBest/static/js/2.6029317e.chunk.js.map",
     "static/js/3.2043cdf3.chunk.js": "/gradeBest/static/js/3.2043cdf3.chunk.js",
     "static/js/3.2043cdf3.chunk.js.map": "/gradeBest/static/js/3.2043cdf3.chunk.js.map",
     "index.html": "/gradeBest/index.html",
     "static/css/main.8bffb295.chunk.css.map": "/gradeBest/static/css/main.8bffb295.chunk.css.map",
-    "static/js/2.cb0ca28a.chunk.js.LICENSE.txt": "/gradeBest/static/js/2.cb0ca28a.chunk.js.LICENSE.txt"
+    "static/js/2.6029317e.chunk.js.LICENSE.txt": "/gradeBest/static/js/2.6029317e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d7e56771.js",
-    "static/js/2.cb0ca28a.chunk.js",
+    "static/js/2.6029317e.chunk.js",
     "static/css/main.8bffb295.chunk.css",
-    "static/js/main.21520dbe.chunk.js"
+    "static/js/main.968442a9.chunk.js"
   ]
 }
