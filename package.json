@@ -2,7 +2,7 @@
   "name": "mark_logger",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://soumyanetra.github.io/gradeBest/",
+  "homepage": "https://soumyanetra.github.io/gradeBest",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",

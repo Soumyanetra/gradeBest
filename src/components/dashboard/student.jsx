@@ -5,7 +5,7 @@ class Student extends Component{
   menu = [{ index: 1, name: 'Tests',                link: '/dashboard/student/tests',     pic: 'images/test.png' },
           {index: 2,  name:'Compare Yourself',      link:'/dashboard/student/compare',      pic:'images/compare.jpg'},
           {index: 3,  name:'Assignments',           link:'/dashboard/student/assignments',         pic:'images/assgn.jpg' },
-          {index: 4,  name: 'Miscellenious',        link: '/dashboard/student/miscellenious', pic: 'images/misscl.png' },
+          {index: 4,  name: 'Miscelleneous',        link: '/dashboard/student/miscellaneous', pic: 'images/misscl.png' },
           {index: 5,  name:'Contact',               link:'/dashboard/student/contact',         pic:'images/contact.jpg'},
       ];
 

@@ -39,7 +39,7 @@ function App() {
           <Route path='/dashboard/student/contact' exact component={contact}></Route>
 
           <Route path='/dashboard/student/assignments' exact component={comingSoon}></Route>
-          <Route path='/dashboard/student/miscellenious' exact component={comingSoon}></Route>
+          <Route path='/dashboard/student/miscellaneous' exact component={comingSoon}></Route>
         </Switch>
       </div>
     </Router>
