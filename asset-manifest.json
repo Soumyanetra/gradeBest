@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/gradeBest/static/css/main.980219b0.chunk.css",
-    "main.js": "/gradeBest/static/js/main.65d83765.chunk.js",
-    "main.js.map": "/gradeBest/static/js/main.65d83765.chunk.js.map",
+    "main.js": "/gradeBest/static/js/main.5a82a69d.chunk.js",
+    "main.js.map": "/gradeBest/static/js/main.5a82a69d.chunk.js.map",
     "runtime-main.js": "/gradeBest/static/js/runtime-main.d7e56771.js",
     "runtime-main.js.map": "/gradeBest/static/js/runtime-main.d7e56771.js.map",
     "static/js/2.63884c6b.chunk.js": "/gradeBest/static/js/2.63884c6b.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.d7e56771.js",
     "static/js/2.63884c6b.chunk.js",
     "static/css/main.980219b0.chunk.css",
-    "static/js/main.65d83765.chunk.js"
+    "static/js/main.5a82a69d.chunk.js"
   ]
 }
